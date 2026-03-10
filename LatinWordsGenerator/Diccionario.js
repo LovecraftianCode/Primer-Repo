@@ -10,12 +10,12 @@ let dic =["abbatia", "acardiotrophia", "abbreviatio", "acatalepsia", "abbreviati
         "cafaeum", "calceamenta cummea", "calceamentarium", "calchaemia", "caleidoscopium", "calligraphia", "calomelanum"
     ]
 
-function generateLatinWord() {
+function generateLatinWord() {//Genera una palabra aleatoria del diccionario
     const randomIndex = Math.floor(Math.random() * dic.length);
     return dic[randomIndex];
 }
 
-function generateLatinphrase(wordCount) {
+function generateLatinphrase(wordCount) {//Genera una frase con la cantidad de palabras especificada, cada palabra es aleatoria del diccionario
     let phrase = '';
     for (let i = 0; i < wordCount; i++) {
         phrase += generateLatinWord() + ' ';
@@ -23,7 +23,7 @@ function generateLatinphrase(wordCount) {
     return phrase.trim();
 }
 
-function repeatLatinPhrase(phrase, times) {
+function repeatLatinPhrase(phrase, times) {//Genera una frase repetida, cada vez con una nueva palabra aleatoria del diccionario, la cantidad de veces que se repite se especifica en el parametro times
     let phrases = [];
     let repeatedPhrase = generateLatinWord();
     for (let i = 0; i < times; i++) {
@@ -36,4 +36,4 @@ function repeatLatinPhrase(phrase, times) {
 let latinPhrase = generateLatinphrase(2);
 console.log("Generated Latin phrase: " + latinPhrase);
 
-console.log(repeatLatinPhrase(generateLatinWord(), 10));
+console.log(repeatLatinPhrase(generateLatinWord(), 10));//Ejemplo de repeticion de frase, se genera una palabra y se repite 10 veces con una nueva palabra cada vez.
